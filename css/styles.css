@@ -1,0 +1,373 @@
+:root{
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: #784D3C;
+    --claro: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+
+}
+
+
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*Para que un rem sean 10 pixeles*/
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit; /*Hereda del elemento padre pero tiene la ventaja de que si lo utilizas en otro selector va a heredar de ese otro*/
+}
+
+body{
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2; /*En un blog es importante un interlineado más grande*/
+}
+
+/*Globales*/
+.contenedor{
+    /*max-width: 120rem; que no exceda los 1200px*/
+    /*width: 90%; Utiliza el 90% siempre y cuando no exceda 1200px*/
+    
+    width: min(90%, 120rem); /*Es lo mismo que lo de arriba pero en una línea de código*/
+
+    margin: 0 auto; /*Centra el contenido es cuando no tenemos un display flex*/
+}
+
+a {
+    text-decoration: none; /*Quitamos el interlineado a todos los enlaces*/
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-family: var(--fuenteHeading); /*Todos con la misma fuente pero diferente tamaño*/
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-family: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*Utilidades*/
+
+.no-margin{ /*Quita los márgenes a todos los que llevan la clase*/
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0; /*Hay elementos que agregan padding automaticamente, con esta utilidad lo quitmaos*/
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.justificar-texto{
+    text-align: justify;
+}
+/*HEADER*/
+.webp .header{
+    background-image: url(../img/banner.webp); /*modernizr*/
+}
+
+.no-webp .header{
+    /* Aquí iría la imagen pero como no sirvió el modernizr lo quito de aquí*/
+}
+.header{
+    background-image: url(../img/banner.jpg); /*POR SI SOLO NO APARECE LA IMAGEN!!*/
+    height: 60rem; /*Antes de esto no aparece la imagen*/
+    background-size: cover; /*Adapta el tamaño de la imagen a diferentes tamaños de pantalla*/
+    background-repeat: no-repeat; /*Evita que se repita la imagen*/
+    background-position: center center; /*Para cuando se haga más chica la imagen se vea la parte importante el primer center es alineación horizontal y el segundo es vertical*/
+}
+
+.header__texto{
+    color: var(--blanco);
+    text-align: center;
+    margin-top: 5rem; /*Se separa de arriba con esta linea pero centrarse lo logrará con nav*/
+}
+
+@media (min-width: 768px) {
+    .header__texto{
+        margin-top: 15rem; /*Terminar de centrar el texto*/
+    }
+}
+/*NAVEGACION*/
+
+@media (min-width: 768px) {
+    .barra{
+        display: flex;
+        justify-content: space-between; /*Uno para cada lado*/
+        align-items: center; /*Para alinear verticalmente*/
+        padding: 4rem;
+    }
+}
+
+.logo{
+    color: var(--blanco);
+}
+
+.logo__nombre{
+    font-family: var(--fuenteParrafos);
+    font-weight: 400;
+}
+
+.logo__bold{
+    font-weight: 700;
+}
+
+
+@media (min-width: 768px) {
+    .navegacion{
+        display: flex; /*Coloca en linea no columna*/
+        gap: 2rem; /*Espacio entre columnas*/
+    }
+}
+.navegacion__enlace{
+    display: block; /*De arriba para abajo en dispositivos móviles*/
+    text-align: center; 
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr; /*2 terceras partes y una tercera parte*/
+        column-gap: 4rem;
+    }
+}
+
+.entrada{
+    border-bottom: 1px solid var(--claro); /*Dibuja una línea en la parte inferior*/
+    margin-bottom: 2rem; /*Para que se alcance a ver*/
+}
+
+.entrada:last-of-type{ /*Quita la línea de abajo y su margin*/
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton{
+    display: block;
+    font-family: var(--fuenteHeading);
+    text-transform: uppercase;
+    color:var(--blanco);
+    background-color: var(--negro);
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom:2rem;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        display: inline; /*Hace más chico el botón*/
+        /* No sirve el margin bottom para inline */
+        display: inline-block;
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+.boton--primario{
+    background-color: var(--negro);
+}
+
+.boton--secundario{
+    background-color: var(--primario);
+}
+
+.cursos{
+    list-style: none;
+}
+.widget-curso{
+    border-bottom: 1px solid var(--claro);
+    margin-bottom: 1rem;
+}
+
+.widget-curso:last-of-type{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.widget-curso__label{
+    font-family: var(--fuenteHeading); /*Porque tiene el font-weight de 700*/
+    font-weight: 700;
+}
+
+.widget-curso__info{
+    font-family: var(--fuenteParrafos);
+    font-weight: 400;
+}
+
+.widget-curso__label,
+.widget-curso__info{
+    font-size: 2rem;
+}
+/* FOOTER */
+
+
+.footer{
+    background-color: var(--negro);
+    padding: 3rem 0;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+@media (min-width: 768px) {
+    .footer__logo{
+        color: var(--blanco);
+        font-family: var(--fuenteParrafos);
+        font-weight: 400;
+        margin-left: 2rem;
+    }
+    
+    .footer__logo span{
+        font-family: var(--fuenteHeading);
+        font-weight: 700;
+    }
+    
+    .footer__navegacion{
+        display: flex;
+        gap: 1.5rem;
+        flex: 0 0 (15%);
+        
+    }
+    
+    .footer__nav{
+        max-width: 90rem;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    } 
+
+}
+
+
+/**Sobre nosotros**/
+
+@media (min-width: 768px) {
+     .sobre-nosotros{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto{
+        flex-basis: 50%; /*Se usa para dar distancia en flex*/
+    } 
+
+    /* Es mas corto con grid:  
+    .sobre-nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+
+    PERO VAMOS A APRENDER SOBRE FLEX EN ESTE PROYECTO
+    }*/
+}
+
+
+/*CURSOS*/
+
+.curso{
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--claro);
+}
+
+@media (min-width: 768px) {
+    .curso{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+.curso:last-of-type{
+    border: none;
+}
+
+.curso__label{
+    font-family: var(--fuenteHeading); /*Porque tiene el font-weight de 700*/
+    font-weight: 700;
+}
+
+.curso__info{
+    font-family: var(--fuenteParrafos);
+    font-weight: 400;
+}
+
+.widget-curso__label,
+.widget-curso__info{
+    font-size: 2rem;
+}
+
+/*CONTACTO*/
+
+.contacto-bg{
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/*FORMULARIO*/
+
+.formulario{
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto; /*Encima el formulario en la imagen y la centra*/
+    width: 95%; /*Para que no abarque todo el espacio de la imagen*/
+    padding: 5rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem; /*Separación entre campos*/
+    gap: 1rem; /*Separa el label del field*/
+}
+
+.campo__label{
+    flex: 0 0 9rem; /*Deja el tamaño fijo del label como 9 rem*/
+    text-align: right;
+}
+
+.campo__field{
+    flex: 1; /*Todo el espacio que tenga disponible lo va a usar*/
+    border: 1px solid var(--claro); /*Para que la línea no sea muy oscura*/
+    
+}
+
+.campo__field--textarea{
+    height: 20rem;
+}
