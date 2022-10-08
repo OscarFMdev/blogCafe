@@ -2,7 +2,11 @@
 
 # Project Name
 
-This is a coffee blog, this blog contains invitation to event, a form to register and important information about coffee. This is a front end project 
+This is a coffee blog, this blog contains invitation to event, a form to register and important information about coffee. This is a front end project. The main goals of this project were:
+
+- Building a responsive website.
+- Use a navigation bar to check all the different sites.
+- Build a blog inside a website.
 
 
 ## Built With
@@ -18,7 +22,7 @@ Take a look at the [project](https://oscarfmdev.github.io/blogCafe/)
 
 ## Getting Started
 
-This project doesn't require any installation, you can see the source code [here](#) and you can see the live version [here](https://oscarfmdev.github.io/blogCafe/)
+This project doesn't require any installation, you can see the source code [here](https://github.com/OscarFMdev/blogCafe) and you can see the live version [here](https://oscarfmdev.github.io/blogCafe/)
 
 ## Authors
 
