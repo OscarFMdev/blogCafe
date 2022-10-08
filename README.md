@@ -13,12 +13,12 @@ This is a coffee blog, this blog contains invitation to event, a form to registe
 
 ## Live Demo
 
-Take a look at the [project]()
+Take a look at the [project](https://oscarfmdev.github.io/blogCafe/)
 
 
 ## Getting Started
 
-This project doesn't require any installation, you can see the source code [here](#) and you can see the live version [here]()
+This project doesn't require any installation, you can see the source code [here](#) and you can see the live version [here](https://oscarfmdev.github.io/blogCafe/)
 
 ## Authors
 
